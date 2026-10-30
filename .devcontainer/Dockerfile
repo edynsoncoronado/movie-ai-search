@@ -16,4 +16,4 @@ ENV UV_PROJECT_ENVIRONMENT=/opt/venv \
 WORKDIR /workspace
 
 # Instalar dependencias, solo si existe el archivo uv.lock
-RUN if [ -f uv.lock ]; then uv sync; fi
+# RUN if [ -f uv.lock ]; then uv sync; fi

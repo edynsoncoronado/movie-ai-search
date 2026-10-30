@@ -28,7 +28,7 @@ services:
       retries: 10
 
   qdrant:
-    image: qdrant/qdrant:latest      # fija la versión en el paso E
+    image: qdrant/qdrant:v1.20.0
     volumes:
       - qdrant-data:/qdrant/storage
 

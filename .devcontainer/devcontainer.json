@@ -32,6 +32,5 @@
       }
     }
   },
-  
-  "postCreateCommand": "pip install --no-cache-dir ipykernel"
+  "postCreateCommand": "uv sync --all-groups" 
 }
