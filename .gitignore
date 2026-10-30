@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Entorno y secretos
+.env
+
+# Datos: solo se versiona la muestra (data/sample/)
+data/*
+!data/README.md
+!data/sample/
+
+# Índices locales
+qdrant_storage/
+
+# Claude Code: configuración personal
+.claude/settings.local.json
+
+# OS / IDE
+.DS_Store
+.idea/

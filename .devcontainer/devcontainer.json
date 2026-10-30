@@ -1,0 +1,37 @@
+{
+  "name": "movie-ai-search",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "shutdownAction": "stopCompose",
+
+  "forwardPorts": [8000, 5432, 6333],
+  "portsAttributes": {
+    "8000": { "label": "API" },
+    "5432": { "label": "Postgres" },
+    "6333": { "label": "Qdrant (dashboard en /dashboard)" }
+  },
+
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        "charliermarsh.ruff",
+        "anthropic.claude-code",
+        "mermaidchart.vscode-mermaid-chart",
+        "pomdtr.excalidraw-editor"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/opt/venv/bin/python",
+        "python.analysis.typeCheckingMode": "basic",
+        "[python]": { "editor.defaultFormatter": "charliermarsh.ruff" },
+        "jupyter.askForKernelRestart": false
+      }
+    }
+  },
+  
+  "postCreateCommand": "pip install --no-cache-dir ipykernel"
+}
