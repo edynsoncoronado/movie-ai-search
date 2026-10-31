@@ -46,6 +46,10 @@ Python 3.12 · uv (`src/` layout, `uv_build` backend) · FastAPI · Pydantic + p
 - Type hints on every public function; ruff defaults.
 
 ## Amendments
+- Only the human amends this constitution. Agents may propose a change, and edit this file only when the human explicitly asks for it.
+- Every amendment bumps the version and adds a row to the table below with its date, change and reason.
+- After an amendment, review the active specs in `specs/` for conflicts with the new text. Any conflict is resolved before work on that spec continues.
+
 | Version | Date | Change | Reason |
 |---|---|---|---|
 | 1.0 | 2026-10-30 | Initial version | — |
