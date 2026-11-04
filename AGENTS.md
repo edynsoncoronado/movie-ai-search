@@ -4,7 +4,7 @@ Natural-language movie search API: semantic + keyword (hybrid) search over ~47k 
 
 ## Read first
 1. `docs/constitution.md`: non-negotiable rules.
-2. `docs/architecture.md`: modules, layers, ports, composition root, test structure and import contracts.
+2. `docs/architecture.md`: modules, dependencies, layers, composition-root and testing rules, key decisions (stable structure only). Ports, types, schemas and settings are in the active spec's `design.md`; the import contracts are in `pyproject.toml`.
 3. The active spec in `specs/NNN-feature/`, and **only** the task you are given from its `tasks.md`.
 
 ## Environment
@@ -52,7 +52,7 @@ All green → mark the task in `tasks.md`, list the RFs it covers, and **stop**.
 ## Never without asking
 - Add, remove or upgrade dependencies.
 - Edit `docs/constitution.md`, any `requirements.md`, or an approved spec.
-- Change or relax import-linter contracts or the module layout in `docs/architecture.md`.
+- Change or relax the import-linter contracts in `pyproject.toml`, or change `docs/architecture.md` (only when the active spec lists it under *Architecture changes*).
 - Call real LLM APIs from tests, or spend API credits.
 - Touch `notebooks/` or `data/` (data preparation, outside the app).
 - Push, rebase or rewrite git history.
