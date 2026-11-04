@@ -1,0 +1,28 @@
+{"case":"full_sample_record","imdb_id":"tt0032145","raw":{"Title":"Wuthering Heights","Year":"1939","Rated":"Approved","Released":"07 Apr 1939","Runtime":"104 min","Genre":"Drama, Romance","Director":"William Wyler","Writer":"Charles MacArthur, Ben Hecht, Emily Brontë","Actors":"Merle Oberon, Laurence Olivier, David Niven","Plot":"The story of unfortunate lovers Cathy (Merle Oberon) and Heathcliff (Sir Laurence Olivier) who, despite a deep affection for one another, are forced by circumstance and prejudice to live their lives apart. Heathcliff and Cathy first meet as children when her father, Mr. Earnshaw (Cecil Kellaway) brings the abandoned boy to live with them. When the old man dies several years later, Cathy's brother, Hindley (Hugh Williams), now the master of the estate, turns Heathcliff out, forcing him to live with the servants and working as a stable boy. The barrier of class comes between them, and she eventually marries a rich neighbor, Edgar Linton (David Niven), at which point, Heathcliff disappears. He returns several years later, now a rich man, but little can be done.","Language":"English","Country":"United States","Awards":"Won 1 Oscar. 9 wins & 7 nominations total","Poster":"https://m.media-amazon.com/images/M/MV5BODk1MTk2ODQtNjY5Ni00NmUzLWI5M2ItN2UzYmE0ZDYwZjQ2XkEyXkFqcGc@._V1_SX300.jpg","Ratings":[{"Source":"Internet Movie Database","Value":"7.5/10"},{"Source":"Rotten Tomatoes","Value":"96%"}],"Metascore":"N/A","imdbRating":"7.5","imdbVotes":"20,678","imdbID":"tt0032145","Type":"movie","DVD":"N/A","BoxOffice":"$624,643","Production":"N/A","Website":"N/A","Response":"True","Season":null,"Episode":null,"seriesID":null,"totalSeasons":null,"Error":null}}
+{"case":"sparse_record","imdb_id":"  tt0000030  ","raw":{"Title":"  Sparse Movie  ","Year":"N/A","Rated":"  PG-13  ","Runtime":"N/A","Genre":"","Director":"N/A","Writer":"  ","Actors":"N/A","Plot":"  A plot.  ","Language":"None, English","Awards":"N/A","imdbRating":"N/A","imdbVotes":"N/A","imdbID":"tt0000030","Type":"movie","Response":"True"}}
+{"case":"bad_json_truncated","imdb_id":"tt0000001","raw":{"Title":"Broken"
+{"case":"bad_json_trailing_comma","imdb_id":"tt0000002",}
+[{"case":"top_level_array"}]
+{"case":"raw_missing","imdb_id":"tt0000003"}
+{"case":"raw_string","imdb_id":"tt0000004","raw":"Title: Not An Object"}
+{"case":"raw_null","imdb_id":"tt0000005","raw":null}
+{"case":"raw_list","imdb_id":"tt0000006","raw":[]}
+{"case":"imdb_id_missing","raw":{"Title":"X","Plot":"P","Type":"movie","Response":"True","imdbID":"tt0000007"}}
+{"case":"imdb_id_null","imdb_id":null,"raw":{"Title":"X","Plot":"P","Type":"movie","Response":"True","imdbID":"tt0000007"}}
+{"case":"imdb_id_empty","imdb_id":"","raw":{"Title":"X","Plot":"P","Type":"movie","Response":"True","imdbID":"tt0000007"}}
+{"case":"imdb_id_too_short","imdb_id":"tt123","raw":{"Title":"X","Plot":"P","Type":"movie","Response":"True","imdbID":"tt0000007"}}
+{"case":"invalid_response","imdb_id":"tt0000011","raw":{"Title":"X","Plot":"P","Type":"movie","Response":"False"}}
+{"case":"type_episode","imdb_id":"tt0000012","raw":{"Title":"X","Plot":"P","Type":"episode","Response":"True"}}
+{"case":"type_series","imdb_id":"tt0000013","raw":{"Title":"X","Plot":"P","Type":"series","Response":"True"}}
+{"case":"title_missing","imdb_id":"tt0000014","raw":{"Plot":"P","Type":"movie","Response":"True"}}
+{"case":"title_empty","imdb_id":"tt0000015","raw":{"Title":"","Plot":"P","Type":"movie","Response":"True"}}
+{"case":"title_na","imdb_id":"tt0000016","raw":{"Title":"N/A","Plot":"P","Type":"movie","Response":"True"}}
+{"case":"title_blank","imdb_id":"tt0000017","raw":{"Title":"   ","Plot":"P","Type":"movie","Response":"True"}}
+{"case":"plot_missing","imdb_id":"tt0000018","raw":{"Title":"X","Type":"movie","Response":"True"}}
+{"case":"plot_empty","imdb_id":"tt0000019","raw":{"Title":"X","Plot":"","Type":"movie","Response":"True"}}
+{"case":"plot_na","imdb_id":"tt0000020","raw":{"Title":"X","Plot":"N/A","Type":"movie","Response":"True"}}
+{"case":"plot_blank","imdb_id":"tt0000021","raw":{"Title":"X","Plot":"   ","Type":"movie","Response":"True"}}
+{"case":"response_false_no_plot","imdb_id":"tt0000022","raw":{"Response":"False","Error":"Incorrect IMDb ID."}}
+{"case":"bad_imdb_id_response_false","imdb_id":"tt12","raw":{"Response":"False","Error":"Incorrect IMDb ID."}}
+{"case":"top_level_id_wins","imdb_id":"tt0000023","raw":{"Title":"X","Plot":"P","Type":"movie","Response":"True","imdbID":"tt9999999"}}
+{"case":"raw_id_only","raw":{"Title":"X","Plot":"P","Type":"movie","Response":"True","imdbID":"tt0000024"}}
