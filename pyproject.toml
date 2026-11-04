@@ -2,9 +2,23 @@
 name = "movie-ai-search"
 version = "0.1.0"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "fastapi>=0.162.0",
+    "fastembed>=0.9.1",
+    "psycopg[binary]>=3.3.8",
+    "pydantic-settings>=2.16.2",
+    "qdrant-client>=1.20.0",
+    "uvicorn>=0.54.0",
+]
 
 [dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "import-linter>=2.15",
+    "pre-commit>=4.7.0",
+    "pytest>=9.2.0",
+    "ruff>=0.17.3",
+]
 notebooks = [
     "aiohttp>=3.14.5",
     "ipykernel>=7.4.0",
@@ -14,3 +28,75 @@ notebooks = [
     "python-dotenv>=1.2.4",
     "tqdm>=4.70.1",
 ]
+
+[build-system]
+requires = ["uv_build"]            # pin the version range that `uv init --package` generates
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "movie_search"       # the project is "movie-ai-search"; without this uv looks for movie_ai_search
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "integration: needs the devcontainer's real postgres and qdrant (deselect with -m \"not integration\")",
+]
+
+[tool.ruff]
+src = ["src", "tests"]
+extend-exclude = ["notebooks", "*.md"]  # *.md: specs and docs hold pseudo-code that ruff must not reformat
+
+[tool.importlinter]
+root_package = "movie_search"
+include_external_packages = true
+
+# Modules form an acyclic graph; main and cli are independent composition roots.
+[[tool.importlinter.contracts]]
+name = "Capabilities dependency graph"
+type = "layers"
+containers = ["movie_search"]
+layers = ["main | cli", "bootstrap", "answering", "search", "catalog", "shared"]
+
+# Clean Architecture layers inside each capability; entrypoints is optional.
+[[tool.importlinter.contracts]]
+name = "Clean Architecture layers inside each capability"
+type = "layers"
+containers = ["movie_search.catalog", "movie_search.search", "movie_search.answering"]
+layers = ["(entrypoints) | infrastructure", "application", "domain"]
+
+# Inner layers stay framework-free.
+[[tool.importlinter.contracts]]
+name = "Domain, application and shared are framework-free"
+type = "forbidden"
+source_modules = [
+  "movie_search.catalog.domain", "movie_search.catalog.application",
+  "movie_search.search.domain", "movie_search.search.application",
+  "movie_search.answering.domain", "movie_search.answering.application",
+  "movie_search.shared",
+]
+forbidden_modules = ["fastapi", "pydantic", "pydantic_settings", "psycopg", "qdrant_client", "fastembed", "openai", "anthropic", "httpx"]
+
+# Modules use each other only through `application`.
+[[tool.importlinter.contracts]]
+name = "search uses catalog only through catalog.application"
+type = "forbidden"
+allow_indirect_imports = true
+source_modules = ["movie_search.search"]
+forbidden_modules = ["movie_search.catalog.domain", "movie_search.catalog.infrastructure", "movie_search.catalog.entrypoints"]
+
+[[tool.importlinter.contracts]]
+name = "answering uses search and catalog only through their application"
+type = "forbidden"
+allow_indirect_imports = true
+source_modules = ["movie_search.answering"]
+forbidden_modules = [
+  "movie_search.search.domain", "movie_search.search.infrastructure", "movie_search.search.entrypoints",
+  "movie_search.catalog.domain", "movie_search.catalog.infrastructure", "movie_search.catalog.entrypoints",
+]
+
+# A domain imports only the stdlib and shared.
+[[tool.importlinter.contracts]]
+name = "Domains import no other capability"
+type = "forbidden"
+source_modules = ["movie_search.search.domain", "movie_search.answering.domain"]
+forbidden_modules = ["movie_search.catalog", "movie_search.search.application", "movie_search.search.infrastructure", "movie_search.search.entrypoints"]

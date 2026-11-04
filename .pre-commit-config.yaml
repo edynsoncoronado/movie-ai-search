@@ -1,0 +1,21 @@
+repos:
+  - repo: local
+    hooks:
+      - id: ruff
+        name: ruff check
+        entry: uv run ruff check .
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: lint-imports
+        name: import-linter
+        entry: uv run lint-imports
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: pytest-fast
+        name: pytest (not integration)
+        entry: uv run pytest -m "not integration"
+        language: system
+        pass_filenames: false
+        always_run: true

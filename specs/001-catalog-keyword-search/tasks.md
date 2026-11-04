@@ -11,7 +11,7 @@ How to work through this list:
 
 ## Checklist
 
-- [ ] T01 · Project setup (Mechanical)
+- [x] T01 · Project setup (Mechanical)
 - [ ] T02 · Catalog domain: parsing and validation (TDD), RF2, RF3
 - [ ] T03 · Catalog application: import and read use cases (TDD), RF1, RF2, RF4
 - [ ] T04 · Catalog infrastructure: JSONL source and PostgreSQL repository (TDD), RF1, RF2, RF4, RF7, RF10
