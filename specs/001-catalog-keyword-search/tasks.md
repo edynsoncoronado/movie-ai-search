@@ -13,7 +13,7 @@ How to work through this list:
 
 - [x] T01 · Project setup (Mechanical)
 - [x] T02 · Catalog domain: parsing and validation (TDD), RF2, RF3
-- [ ] T03 · Catalog application: import and read use cases (TDD), RF1, RF2, RF4
+- [x] T03 · Catalog application: import and read use cases (TDD), RF1, RF2, RF4
 - [ ] T04 · Catalog infrastructure: JSONL source and PostgreSQL repository (TDD), RF1, RF2, RF4, RF7, RF10
 - [ ] T05 · Catalog entrypoint: `ingest` command, Settings, CLI root (Mechanical), RF1, RF2
 - [ ] T06 · Search domain: keyword text, query, ranking (TDD), RF6, RF7, RF8
